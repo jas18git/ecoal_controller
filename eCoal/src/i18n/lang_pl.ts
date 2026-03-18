@@ -12,7 +12,7 @@ export default {
   pump_1: "Pompa 1",
   pump_2: "Pompa 2",
   out_cwu: "Pompa CWU",
-  boiler_setpoint: "Temp. zad. boilera",
+  boiler_setpoint: "Temp. zad. kotła",
   dhw_setpoint: "Temp. zad. CWU",
   feeder_temp: "Temp. podajnika",
   internal_temp: "Temp. wewnętrzna",
