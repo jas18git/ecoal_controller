@@ -253,9 +253,29 @@ export class MqttService {
       },
     };
 
+    const switchConfig2 = {
+      name: t("pump2_mode"),
+      unique_id: `${this.deviceId}_pump2_mode`,
+      state_topic: `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/state`,
+      command_topic: `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/set`,
+      icon: "mdi:auto-mode",
+      device: {
+        identifiers: [this.deviceId],
+        name: this.config.device_name,
+        model: "eCoal Controller",
+        manufacturer: "eCoal",
+      },
+    };
+
     this.mqttClient.publish(
       `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/auto_mode/config`,
       JSON.stringify(switchConfig),
+      { retain: true },
+    );
+
+     this.mqttClient.publish(
+      `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/config`,
+      JSON.stringify(switchConfig2),
       { retain: true },
     );
 
