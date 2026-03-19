@@ -338,9 +338,17 @@ export class MqttService {
     if (topic.includes("/auto_mode/set")) {
       const autoMode = message.toLowerCase() === "on" ? "1" : "0";
       const success = await this.setECoalValue("tryb_auto", autoMode);
-
+    
       if (success) {
         const stateTopic = `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/auto_mode/state`;
+        this.mqttClient.publish(stateTopic, message.toUpperCase());
+      }
+    } else if (topic.includes("/pump2_mode/set")) {
+      const autoMode = message.toLowerCase() === "on" ? "1" : "0";
+      const success = await this.setECoalValue("tryb_auto", autoMode);
+      
+      if (success) {
+        const stateTopic = `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/state`;
         this.mqttClient.publish(stateTopic, message.toUpperCase());
       }
     } else if (topic.includes("/number/")) {
