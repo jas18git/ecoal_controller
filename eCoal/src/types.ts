@@ -113,7 +113,8 @@ export type TID =
   | "tpow_value"
   | "temp"
   | "vtemp"
-  | "pod_typ";
+  | "pod_typ"
+  | "ob2_typ";
 
 export interface TemperatureControlMapping {
   name: keyof Translations;
