@@ -135,6 +135,7 @@ export class ECoalService {
           "ob3_zaw4d_tzad",
           "ob3_zaw4d_pos",
           "pod_typ",
+          "ob2_typ",
         ],
         5,
       );
