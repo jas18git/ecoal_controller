@@ -131,6 +131,15 @@ export class MqttService {
       this.mqttClient.publish(stateTopic, autoModeValue === "1" ? "ON" : "OFF");
     }
 
+    const pump2ModeValue = data.cmd.device.reg.find(
+      (r) => r.tid === "ob2_typ",
+    )?.v;
+
+    if (pump2ModeValue) {
+      const stateTopic = `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/state`;
+      this.mqttClient.publish(stateTopic, pump2ModeValue === "1" ? "ON" : "OFF");
+    }
+
     temperatureControlMappings.forEach((config) => {
       const register = data.cmd.device.reg.find(
         (r) => r.tid === config.currentSetValueId,
