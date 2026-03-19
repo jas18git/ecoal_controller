@@ -38,4 +38,5 @@ export default {
   retort_group: "Retort Group",
   retort_ecoal: "Retort eCoal",
   next_fuel_date: "Next fuel date",
+  pump_2_mode: "Pump 2",
 } satisfies Translations;
