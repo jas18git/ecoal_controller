@@ -316,8 +316,8 @@ export class MqttService {
     const commandTopic = `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/auto_mode/set`;
     this.mqttClient.subscribe(commandTopic);
 
-    const commandTopic = `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/set`;
-    this.mqttClient.subscribe(commandTopic);
+    const commandTopic2 = `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/set`;
+    this.mqttClient.subscribe(commandTopic2);
 
     temperatureControlMappings.forEach((config) => {
       const numberTopic = `${this.config.mqtt_topic_prefix}/number/${this.deviceId}/${config.mqttUniqueId}/set`;
