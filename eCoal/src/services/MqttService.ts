@@ -344,7 +344,7 @@ export class MqttService {
       }
     } else if (topic.includes("/pump2_mode/set")) {
       const pump2Mode = message.toLowerCase() === "on" ? "1" : "0";
-      const success = await this.setECoalValue("tryb_pump2", pump2Mode);
+      const success = await this.setECoalValue("ob2_typ", pump2Mode);
       
       if (success) {
         const stateTopic = `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/state`;
