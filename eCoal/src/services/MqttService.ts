@@ -86,7 +86,6 @@ export class MqttService {
     this.mqttClient.on("error", (error) => {
       logger.error("MQTT connection error:", error);
     });
-
     this.mqttClient.on("message", (topic, message) => {
       this.handleMqttMessage(topic, message.toString());
     });
