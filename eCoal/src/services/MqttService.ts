@@ -254,7 +254,7 @@ export class MqttService {
     };
 
     const switchConfig2 = {
-      name: t("pump2_mode"),
+      name: t("pump_2_mode"),
       unique_id: `${this.deviceId}_pump2_mode`,
       state_topic: `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/state`,
       command_topic: `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/set`,
@@ -274,7 +274,7 @@ export class MqttService {
     );
 
      this.mqttClient.publish(
-      `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump2_mode/config`,
+      `${this.config.mqtt_topic_prefix}/switch/${this.deviceId}/pump_2_mode/config`,
       JSON.stringify(switchConfig2),
       { retain: true },
     );
