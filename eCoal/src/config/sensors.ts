@@ -56,6 +56,12 @@ export const sensorMappings: SensorMapping[] = [
     tid: "tryb_auto_state",
     type: "state",
   },
+    {
+    name: "pump2_mode",
+    mqttUniqueId: "sensor_pump2_mode",
+    tid: "pump2_mode",
+    type: "state",
+  },
   {
     name: "pump_1",
     mqttUniqueId: "sensor_pump_1",

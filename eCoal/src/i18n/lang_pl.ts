@@ -38,5 +38,5 @@ export default {
   retort_group: "Retortowy Grupowy",
   retort_ecoal: "Retortowy eCoal",
   next_fuel_date: "Data następnego zasypu",
-  pump_2_mode: "Pompa 2",
+  pump2_mode: "Pompa 2",
 } satisfies Translations;
